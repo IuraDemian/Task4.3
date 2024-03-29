@@ -14,7 +14,50 @@
     <p> Variant 4 </p>
 <script>
 
+function randomNum(min, max) 
+{
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+function game() 
+{
+    let array = [];
+    const sizearray = parseInt(prompt("Введіть розмір масиву")); 
+    let totalyWin = 0;
+
+    for (let i = 0; i < sizearray; i++) 
+    {
+        array.push(randomNum(-500, 500));
+    }
+
+    while (array.length > 0) 
+    {
+
+        let choice = parseInt(prompt(`Сумарний виграш: ${totalyWin}  \n\nВиберіть номер елементу або натисніть 'Отмена' для завершення гри:`));
+
+        if (Number.isNaN(choice)) 
+        {
+            alert(`Гра завершена. \nСумарний виграш: ${totalyWin}`);
+            return;
+        }
+
+        if (choice < 1 || choice > array.length) 
+        {
+            alert("Некоректний вибір. Спробуйте ще раз.");
+            continue;
+        }
+
+        alert(`Масив: ${array.join(`, `)}  \nВиграш за цей хід: ${array[choice - 1]}`);
+
+        let win = array[choice - 1];
+        totalyWin += win;
+        array.splice(choice - 1, 1);
+
+    }
+
+}
+
+game();
 
 </script>
 </body>

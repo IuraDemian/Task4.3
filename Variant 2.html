@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Variant 2 </title>
+</head>
+
+
+
+
+
+<body>
+    <p> Variant 2 </p>
+<script>
+
+let visitors = [25, 12, 18, 22, 30, 19, 15];
+
+let daysLessThan20 = [];
+for (let i = 0; i < visitors.length; i++) 
+{
+    if (visitors[i] < 20) 
+    {
+        daysLessThan20.push(i + 1);
+    }
+}
+
+let minVisitors = Math.min(...visitors);
+let daysWithMinVisitors = [];
+for (let i = 0; i < visitors.length; i++) 
+{
+    if (visitors[i] === minVisitors) 
+    {
+        daysWithMinVisitors.push(i + 1);
+    }
+}
+
+let maxVisitors = Math.max(...visitors);
+let daysWithMaxVisitors = [];
+for (let i = 0; i < visitors.length; i++) 
+{
+    if (visitors[i] === maxVisitors) 
+    {
+        daysWithMaxVisitors.push(i + 1);
+    }
+}
+
+let totalVisitorsWorkdays = 0;
+for (let i = 0; i < visitors.length; i++) 
+{
+    if (i < 5) 
+    {
+        totalVisitorsWorkdays += visitors[i];
+    }
+}
+
+let totalVisitorsWeekend = 0;
+for (let i = 5; i < visitors.length; i++) 
+{
+    totalVisitorsWeekend += visitors[i];
+}
+
+alert(`Номери днів з меншою кількістю відвідувачів за 20: ${daysLessThan20.join(", ")}`);
+alert(`Номери днів з мінімальною кількістю відвідувачів: ${daysWithMinVisitors.join(", ")}`);
+alert(`Номери днів з максимальною кількістю відвідувачів: ${daysWithMaxVisitors.join(", ")}`);
+alert(`Загальна кількість клієнтів у робочі дні: ${totalVisitorsWorkdays}`);
+alert(`Кількість клієнтів у вихідні дні: ${totalVisitorsWeekend}`);
+
+</script>
+</body>

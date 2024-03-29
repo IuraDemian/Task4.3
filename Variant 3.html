@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Variant 3 </title>
+</head>
+
+
+
+
+
+<body>
+    <p> Variant 3 </p>
+<script>
+
+let studentNames = ["Іван", "Петро", "Марія", "Юрій", "Іван", "Юрій", "Олена", "Юрій", "Юлія"];
+let inputName = prompt("Введіть ім'я для пошуку в масиві:");
+
+let count = 0;
+for (let i = 0; i < studentNames.length; i++) 
+{
+    if (studentNames[i] === inputName)
+    {
+        count++;
+    }
+}
+
+alert(`Ім'я "${inputName}" зустрічається ${count} разів у масиві імен.`);
+
+</script>
+</body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Variant 1 </title>
+</head>
+
+
+
+
+
+<body>
+    <p> Variant 1 </p>
+<script>
+
+let studentGrades = [5, 5, 5, 5, 5];
+
+let sumgrades = 0;
+for (let i = 0; i < studentGrades.length; i++) 
+{
+    sumgrades += studentGrades[i];
+}
+let averageGrades = sumgrades / studentGrades.length;
+
+let categories = 
+{
+        "відмінник": studentGrades.every(studentGrades => studentGrades === 5),
+        "двійочник": studentGrades.some(studentGrades => studentGrades === 2),
+        "хорошист": studentGrades.every(studentGrades => studentGrades >= 4),
+        "трійочник": studentGrades.includes(3)
+};
+
+let categoriesString = "";
+for (let category in categories) 
+{
+    if (categories[category]) 
+    {
+        categoriesString += category + "; ";
+    }
+}
+
+alert(`середнє значення оцінок = ${averageGrades}`);
+alert(`студент відносится до категорії: ${categoriesString}`);
+
+</script>
+</body>
